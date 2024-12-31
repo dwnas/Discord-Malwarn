@@ -25,10 +25,25 @@ jobs:
           - name: Run generate.py
             run: python generate.py
 
+          - name: Check if import.css has changed
+            id: check_diff
+            run: |
+              if git diff --exit-code import.css; then
+                echo "No changes in import.css"
+                echo "::set-output name=changed::false"
+              else
+                echo "import.css has changed"
+                echo "::set-output name=changed::true"
+              fi
+
           - name: Commit and push changes
+            if: steps.check_diff.outputs.changed == 'true'
+            env:
+              GH_PAT: ${{ secrets.GH_PAT }}
             run: |
               git config --global user.name 'github-actions[bot]'
               git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+              git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
               git add import.css -f
-              git commit -m 'Update import.css [workflow]' -a
-              git push https://x-access-token:${{ secrets.GH_AT }}@github.com/dwnas/Discord-Malwarn.git
+              git commit -m 'Update import.css [workflow]'
+              git push origin main
