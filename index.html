@@ -12,6 +12,14 @@
             font-size: 1.5em;
             color: #333;
         }
+        code::after {
+            content: '📄';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #333;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -19,5 +27,19 @@
     <p>Visit the <a href="https://github.com/dwnas/Discord-Malwarn">GitHub</a> to see the code.</p>
     <code>@import url(https://dwnas.github.io/Discord-Malwarn/import.css)</code>
 </body>
+
+<script>
+    document.querySelector('code').addEventListener('click', () => {
+        const code = document.querySelector('code').innerText;
+        navigator.clipboard.writeText(code);
+    });
+    navigator.clipboard.onwrite = () => {
+        const code = document.querySelector('code');
+        code.innerText = 'Copied to clipboard!';
+        setTimeout(() => {
+            code.innerText = '@import url(https://dwnas.github.io/Discord-Malwarn/import.css)';
+        }, 400);
+    };
+</script>
 
 </html>
