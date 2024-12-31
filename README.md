@@ -8,7 +8,7 @@ Either one of:
 * Stylus, or another extension that allows for custom css on webpages
 ---
 Then, simply insert this CSS wherever appropriate:
-```cs
+```css
 @import url("https://raw.githubusercontent.com/dwnas/Discord-Malwarn/refs/heads/main/import.css")
 ```
 
