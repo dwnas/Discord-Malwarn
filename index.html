@@ -26,16 +26,19 @@
 
 <script>
     document.querySelector('code').addEventListener('click', () => {
-        const code = document.querySelector('code');
+        
         navigator.clipboard.writeText('@import url(https://dwnas.github.io/Discord-Malwarn/import.css)');
-        code.innerText = 'Copied to clipboard!';
+        
+        const copied = document.createElement('span');
+        copied.textContent = 'Copied!';
+        copied.style.color = 'green';
+        document.body.appendChild(copied);
         setTimeout(() => {
-            code.innerText = '@import url(https://dwnas.github.io/Discord-Malwarn/import.css)';
-        }, 400);
+            copied.remove();
+        }, 2000);
+
     });
        
-        
-    };
 </script>
 
 </html>
