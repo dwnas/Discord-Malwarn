@@ -12,3 +12,5 @@ Then, simply insert this CSS wherever appropriate:
 @import url("https://raw.githubusercontent.com/dwnas/Discord-Malwarn/refs/heads/main/import.css")
 ```
 
+## Example
+![Example image of this CSS](example.png)
