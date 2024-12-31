@@ -16,7 +16,5 @@ def write_import_file() -> None:
     with open("import.css", "w") as f:
         f.write(template.replace("$$links$$", ",".join(links)))
 
-# 
-
 write_import_file()
     
