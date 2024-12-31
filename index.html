@@ -28,7 +28,10 @@
     document.querySelector('code').addEventListener('click', () => {
         
         navigator.clipboard.writeText('@import url(https://dwnas.github.io/Discord-Malwarn/import.css)');
-        
+        if (document.querySelector('span')) {
+            document.querySelector('span').remove();
+        }
+
         const copied = document.createElement('span');
         copied.textContent = 'Copied!';
         copied.style.color = 'green';
