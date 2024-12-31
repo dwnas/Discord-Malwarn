@@ -31,4 +31,4 @@ jobs:
               git config --global user.email 'github-actions[bot]@users.noreply.github.com'
               git add import.css -f
               git commit -m 'Update import.css [workflow]' -a
-              git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/dwnas/Discord-Malwarn.git
+              git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/dwnas/Discord-Malwarn.git 
