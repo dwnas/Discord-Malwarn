@@ -9,7 +9,7 @@ Either one of:
 ---
 Then, simply insert this CSS wherever appropriate:
 ```css
-@import url("https://dwnas.github.io/Discord-Malwarn/import.css")
+@import url("https://dwnas.github.io/Discord-Malwarn/import.css;")
 ```
 
 ## Example

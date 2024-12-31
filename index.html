@@ -22,13 +22,13 @@
 <body>
     <h1>Discord Malwarn</h1>
     <p>Visit the <a href="https://github.com/dwnas/Discord-Malwarn">GitHub</a> to see the code.</p>
-    <code>@import url(https://dwnas.github.io/Discord-Malwarn/import.css)</code>
+    <code>@import url("https://dwnas.github.io/Discord-Malwarn/import.css");</code>
 </body>
 
 <script>
     document.querySelector('code').addEventListener('click', () => {
         
-        navigator.clipboard.writeText('@import url(https://dwnas.github.io/Discord-Malwarn/import.css)');
+        navigator.clipboard.writeText('@import url(https://dwnas.github.io/Discord-Malwarn/import.css);');
         if (!document.querySelector('span')) {
             const copied = document.createElement('span');
             copied.textContent = 'Copied!';
