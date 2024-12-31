@@ -11,10 +11,12 @@
         code {
             font-size: 1.5em;
             color: #333;
+            pointer-events: none;
+            cursor: pointer
         }
         code::after {
-            content: '📄';
-            cursor: pointer;
+            content: '📄 Click to copy';
+            font-size: 0.5em;
         }
     </style>
 </head>
@@ -28,17 +30,18 @@
     document.querySelector('code').addEventListener('click', () => {
         
         navigator.clipboard.writeText('@import url(https://dwnas.github.io/Discord-Malwarn/import.css)');
-        if (document.querySelector('span')) {
-            document.querySelector('span').remove();
+        if (!document.querySelector('span')) {
+            const copied = document.createElement('span');
+            copied.textContent = 'Copied!';
+            copied.style.color = 'green';
+            copied.style.display = 'block';
+            document.body.appendChild(copied);
+            setTimeout(() => {
+                copied.remove();
+            }, 2000);
         }
 
-        const copied = document.createElement('span');
-        copied.textContent = 'Copied!';
-        copied.style.color = 'green';
-        document.body.appendChild(copied);
-        setTimeout(() => {
-            copied.remove();
-        }, 2000);
+        
 
     });
        
