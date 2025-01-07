@@ -3,7 +3,8 @@ def generate_css() -> list:
         links = f.read().split("\n")
     
     for link in links:
-        links[links.index(link)] = f"[href^='{link}']"
+        if link:
+            links[links.index(link)] = f"[href^='{link}']"
     
     return links
 
