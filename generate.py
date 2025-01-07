@@ -5,6 +5,8 @@ def generate_css() -> list:
     for link in links:
         if link:
             links[links.index(link)] = f"[href^='{link}']"
+        else:
+            links.remove(link)
     
     return links
 
